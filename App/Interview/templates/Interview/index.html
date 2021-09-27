@@ -7,6 +7,21 @@
     <title>Winter 2022 Interview</title>
 </head>
 <body>
-    Hello There
+    <h2>To Create a new access token for a door:</h2>
+    <form id="create">
+        Input a list of door ids here seperated by commas :
+        <input type="text" id = "door_id_list"> 
+        <br>
+        <button type = "submit">Submit</button>
+        <p id = "access_key"></p>
+    </form>
+
+    <h2>To Validate a door acess token:</h2>
+    <form id="validate">
+        door id :<input type="text" id = "door_id_val"> <br>
+        access token :<input type="text" id = "acess_key"> <br>
+        <button type = "submit">Submit</button>
+
+    </form>
 </body>
 </html>
