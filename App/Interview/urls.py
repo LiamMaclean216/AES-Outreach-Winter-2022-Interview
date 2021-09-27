@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-
-    path('', include('Interview.urls')),
+    path('create/', views.create, name = "create"),
+    path('validate/', views.validate, name = "validate"),
+    
 ]
