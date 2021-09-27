@@ -14,10 +14,8 @@ def index(request):
     return render(request, 'Interview/index.html')
 
 def create(request):
-    print(request)
     if request.method == 'POST':
         data = json.loads(request.body)
-        print(data)
         hex = token_hex(16)
         for i in data["list_ids"]:
             Door.objects.create(door_id = i, token_hex = hex)

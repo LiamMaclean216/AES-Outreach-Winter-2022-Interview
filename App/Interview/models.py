@@ -8,4 +8,4 @@ class Door(models.Model):
     token_hex = models.CharField(max_length = 16)
 
     def __str__(self):
-        return f"Door key for door number {door_id}"
+        return f"Key for door number {self.door_id}"
