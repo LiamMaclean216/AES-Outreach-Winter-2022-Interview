@@ -26,14 +26,7 @@ def create(request):
 
 
 def validate(request, door_id, access_token):
-    response = {'is_valid' : False, 'door_exists' : False}
-
-    try:
-        door = Door.objects.get(door_id)
-    except DoesNotExist:
-        return JsonResponse(response)
-
-    response['door_exists'] = True
-    response['is_valid'] = (access_token == door.access_token)
+    print(door_id, access_token)
+    response = {'is_valid' : Door.objects.filter(door_id=door_id, token_hex=access_token).exists()}
 
     return JsonResponse(response)

@@ -21,6 +21,6 @@ urlpatterns = [
     path('', views.index, name = "index"),
 
     path('create/', views.create, name = "create"),
-    path('validate/', views.validate, name = "validate"),
+    path('validate/<int:door_id>/<str:access_token>', views.validate, name = "validate"),
     
 ]

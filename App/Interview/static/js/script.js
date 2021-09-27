@@ -22,3 +22,21 @@ document.querySelector("#create").addEventListener("submit", function(e) {
     })
 
 });
+
+
+
+document.querySelector("#validate").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let id = this.querySelector("#door_id_val").value.replace(" ", "")
+    let token = this.querySelector("#acess_key").value.replace(" ", "")
+    
+    let self = this
+    fetch(`/validate/${id}/${token}`, {
+        method: 'GET',
+
+    }).then((response) => response.json()
+    ) .then(function (response) {
+        self.querySelector("#is_valid").innerHTML = response["is_valid"] ? "valid" : "invalid"
+    })
+
+});
