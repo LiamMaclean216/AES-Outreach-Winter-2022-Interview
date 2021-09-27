@@ -11,6 +11,7 @@
 <body>
     <h2>To create a new access token for a door:</h2>
     <form id="create">
+        {% csrf_token %}
         Input a list of door ids here seperated by commas :
         <input type="text" id = "door_id_list"> 
         <br>
@@ -20,6 +21,7 @@
 
     <h2>To validate a door acess token:</h2>
     <form id="validate">
+        {% csrf_token %}
         door id :<input type="text" id = "door_id_val"> <br>
         access token :<input type="text" id = "acess_key"> <br>
         <button type = "submit">Submit</button>
