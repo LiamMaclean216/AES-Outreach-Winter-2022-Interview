@@ -12,7 +12,7 @@
     <h2>To create a new access token for a door:</h2>
     <form id="create">
         {% csrf_token %}
-        Input a list of door ids here seperated by commas :
+        Input a list of door ids here seperated by commas, must be numbers :
         <input type="text" id = "door_id_list"> 
         <br>
         <button type = "submit">Submit</button>
