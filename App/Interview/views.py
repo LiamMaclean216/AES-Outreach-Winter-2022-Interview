@@ -9,10 +9,13 @@ from django.http import JsonResponse
 
 # Create your views here.
 
+def index(request):
+    return render(request, 'Interview/index.html')
+
 def create(request, list_ids):
     hex = token_hex(16)
     for i in list_ids:
-        Door.objects.create(door_id = i,token_hex  = hex)
+        Door.objects.create(door_id = i, token_hex = hex)
 
     return JsonResponse({'access_token' : hex})
 
@@ -26,6 +29,6 @@ def validate(request, door_id, access_token):
         return JsonResponse(response)
 
     response['door_exists'] = True
-    response['is_valid'] = (access_token = door.access_token)
+    response['is_valid'] = (access_token == door.access_token)
 
     return JsonResponse(response)
